@@ -64,3 +64,6 @@ The project was managed within a strict budget, utilizing AWS Credits and t2.mic
 
 
 Developed as part of a Cloud Engineering deep-dive to transition from Support to Infrastructure Orchestration.
+
+Note: This live demo is hosted on an AWS Free Tier environment and may be taken offline periodically for maintenance."
+(This is a professional way of saying "I'm turning this off when my credits run low!"
