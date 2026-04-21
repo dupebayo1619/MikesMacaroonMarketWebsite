@@ -1,0 +1,60 @@
+
+Sam Bayo's Asun Delicacies Marketplace
+A Decoupled Full-Stack AWS Cloud Infrastructure Project
+
+Project Overview
+This project demonstrates the transition from a local development environment to a production-ready cloud infrastructure. It hosts a dynamic marketplace for Asun (peppered goat meat), utilizing a decoupled architecture to ensure high availability, data persistence, and security.
+
+Live Demo: 
+http://108.130.223.150:8080/products] (http://108.130.223.150:8080/products)
+
+Architecture
+The application is built using a "Security-First" approach on AWS:
+
+Compute (EC2): A Linux-based Amazon EC2 instance hosting the Node.js/Express backend.
+Database (RDS): A decoupled Amazon RDS (PostgreSQL) instance for persistent order and product management.
+Storage (S3): Amazon S3 bucket used for high-speed delivery of static assets (menu images).
+Security: Integrated SSL/TLS encryption for database communication using AWS global-bundle certificates.
+
+
+Key Technical Implementations
+
+ 1. Production Resilience (DevOps)
+To ensure the application remains live 24/7 without requiring an active SSH session, I implemented background process orchestration:
+bash
+ Ensuring the service survives terminal logout
+node index.js & disown
+2. Secure Data Persistence
+Configured the PostgreSQL client to require SSL/TLS encryption, ensuring that customer data (like orders) is never transmitted in plain text across the network.
+3. Cloud Asset Management
+Implemented S3 Bucket Policies to manage public read access for assets while maintaining restricted permissions for the bucket itself, solving common "Access Denied" hurdles in cloud deployments.
+
+Tech Stack
+•	Cloud: AWS (EC2, RDS, S3, IAM, Security Groups)
+•	Backend: Node.js, Express.js
+•	Database: PostgreSQL
+•	OS: Amazon Linux 2023
+•	Tools: Git, NPM, Bash Scripting
+How to Run
+1.	Clone the repo:
+Bash
+git clone [https://github.com/dupebayo1619/MikesMacaroonMarketWebsite.git](https://github.com/dupebayo1619 MikesMacaroonMarketWebsite.git)
+
+cd MikesMacaroonMarketWebsite
+
+2.	Install Dependencies:
+Bash
+npm install
+
+3.	Setup Environment Variables:
+Configure your .env file with your RDS Endpoint, DB Credentials, and SSL certificate path.
+4.	Launch:
+
+Bash
+node index.js & disown
+
+About the Author
+Samuel Adebayo Cloud Support Engineer | Aspiring DevOps Architect Specializing in IaaS, SaaS, and PaaS migrations with a focus on Microsoft 365 and AWS ecosystems.
+
+
+
